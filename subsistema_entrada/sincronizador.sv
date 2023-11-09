@@ -25,7 +25,7 @@ logic aux23;
 
 always_ff @(posedge clk) begin
 	//sincroniza bit 0
-	if (!rst) begin 
+	if (rst) begin 
 		aux00<=1'b0;
 		aux10<=1'b0;
 		aux20<=1'b0;
@@ -38,15 +38,16 @@ always_ff @(posedge clk) begin
 		Out[0]<=aux20;
 	end
 end
+	//sincroniza bit 1
 always_ff @(posedge clk) begin
-	if (!rst) begin 
+	if (rst) begin 
 		aux01<=1'b0;
 		aux11<=1'b0;
 		aux21<=1'b0;
 		Out[1]<=1'b0;		
 	end	
 	else begin
-	//sincroniza bit 1
+
 		aux01<=In[1];
 		aux11<=aux01;
 		aux21<=aux11;	
@@ -56,7 +57,7 @@ end
 	//sincroniza bit 2
 
 always_ff @(posedge clk) begin
-	if (!rst) begin 
+	if (rst) begin 
 		aux02<=1'b0;
 		aux12<=1'b0;
 		aux22<=1'b0;
@@ -71,7 +72,7 @@ always_ff @(posedge clk) begin
 end
 	//sincroniza bit 3
 always_ff @(posedge clk) begin
-	if (!rst) begin 
+	if (rst) begin 
 		aux03<=1'b0;
 		aux13<=1'b0;
 		aux23<=1'b0;

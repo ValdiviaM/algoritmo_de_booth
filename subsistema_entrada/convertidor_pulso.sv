@@ -11,7 +11,7 @@ enum logic {
     ESPERA_REL } estado, sig_estado;
 
 always_ff @(posedge clk) begin
-	if (!rst) estado <= ESPERA_PRESS;
+	if (rst) estado <= ESPERA_PRESS;
 	else estado <= sig_estado;
 end
 

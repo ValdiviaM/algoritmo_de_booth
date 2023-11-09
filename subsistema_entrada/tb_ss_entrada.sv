@@ -30,25 +30,24 @@ initial forever #5 clk=~clk;
 initial begin
 	A=0;
 	B=0;
-	rst=1;
 	boton=0;
-	@(posedge clk)
 	rst=0;
 	@(posedge clk)
 	rst=1;
 	@(posedge clk)
-	A=4'b1011;
-	B=4'b0110;
-	@(posedge clk)
-	@(posedge clk)
-	@(posedge clk)
-	boton=1;
-	@(posedge clk)
-	@(posedge clk)
-	@(posedge clk)
-	@(posedge clk)	
-	boton=0;
-	@(posedge clk);
+	rst=0;
+	repeat(50) begin
+		A=$random;
+		B=$random;
+		@(posedge clk)
+		@(posedge clk)
+		@(posedge clk)
+		boton=1;
+		@(posedge clk)
+		boton=0;
+		#180;	
+	end
+	$finish;
 	
 end
 
