@@ -40,7 +40,7 @@ Para el diagrama de estados de esta máquina cuando no se menciona una entrada s
 
 ![image](https://github.com/dl-2-23/tarea3-griii5/assets/143150841/cb3c47b0-3574-4db4-bd24-ae9e67a65d46)
 
-##Simulación del sistema completo
+## Simulación del sistema completo
 
 ![image](https://github.com/dl-2-23/tarea3-griii5/assets/143150841/92950cea-b6ae-4088-9b43-cf3744b0a33d)
 
