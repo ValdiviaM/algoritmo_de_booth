@@ -1,28 +1,29 @@
-MULTIPLICACIÓN POR ALGORITMO DE BOOTH
+# Multiplicación por Algoritmo de Booth
 
-Video de la demostración: https://youtu.be/R0FzU-s2TFQ
+## [Video de la demostración](https://youtu.be/R0FzU-s2TFQ)
 
-Funcionamiento del sistema completo
+##Funcionamiento del sistema completo
 La funcionalidad general de este sistema es recibir dos operandos, y realiza la operación de multiplicación hasta que se suelte el botón que acciona el sistema, luego guarda el resultado en un registro de salida para mantener el resultado estable donde se puede visualizar cuando se termine la operación. 
-Funcionamiento del subsistema de lectura
+
+##Funcionamiento del subsistema de lectura
 El sistema se encarga de recibir los datos del usuario e ingresarlos al sistema, está compuesto por un sincronizador para cada operando y un convertidor de nivel a pulso para el botón de entrada. 
 El sincronizador es de 3 flip-flops para cada bit del operando y sirve para reducir el riesgo de metaestabilidad al proporcionar un mayor margen de tiempo para que el sistema se estabilice antes de comenzar con la multiplicación. 
 Por otra parte, el convertidor de nivel a pulso envía una señal de valid al subsistema de multiplicación cuando el botón se suelta después de ser presionado para que el sistema empiece con la operación. Este convertidor se implementó con una maquina de estados que se detalla más adelante.
 
 ![ss_entrada](https://github.com/dl-2-23/tarea3-griii5/assets/143150841/7f2dac9b-102f-4e9b-95fe-828eba3735b9)
 
-Funcionamiento del subsistema de multiplicación
+##Funcionamiento del subsistema de multiplicación
 El subsistema de multiplicación se encarga de recibir los datos del sistema de lectura y hacer la multiplicación entre los operandos para luego pasarle el resultado al subsistema de despliegue de resultados y decirle cuando se terminó la operación.
 Este subsistema cuenta con una maquina de estados que se detalla más adelante, un datapath que contiene los elementos necesarios para realizar el algoritmo de booth como registros y sumadores. También un contador que cuenta hacia abajo y que indica cuando se acaban las iteraciones y por ende cuando ya se tiene el resultado.
 
 ![ss_mult (1)](https://github.com/dl-2-23/tarea3-griii5/assets/143150841/4237d3bc-7eb4-4334-b983-4aac939669b2)
 
-Funcionamiento del subsistema de despliegue de resultado
+##Funcionamiento del subsistema de despliegue de resultado
 Este subsistema es un registro que toma el resultado de la multiplicación y lo guarda cuando se acabó la operación, así el usuario solo ve un cambio cuando ya se terminó y no ve valores intermedios del proceso.
 
 ![ss_salida (1)](https://github.com/dl-2-23/tarea3-griii5/assets/143150841/e1552038-f06e-4af4-b4a3-628a76725462)
 
-Diagramas de estado de las FSM del sistema.
+##Diagramas de estado de las FSM del sistema.
 En el sistema implementado se utilizaron dos máquinas de estado, una para la conversión de nivel a pulso y otra para el multiplicador. 
 La primera máquina de estados es bastante sencilla, solo tiene dos estados, para esta primera se tiene el siguiente diagrama de estados en donde la entrada y salida son la señal de botón y la de valid respectivamente.
 
@@ -33,7 +34,7 @@ Para el diagrama de estados de esta máquina cuando no se menciona una entrada s
 
 ![image](https://github.com/dl-2-23/tarea3-griii5/assets/143150841/cb3c47b0-3574-4db4-bd24-ae9e67a65d46)
 
-Simulación del sistema completo
+##Simulación del sistema completo
 
 ![image](https://github.com/dl-2-23/tarea3-griii5/assets/143150841/92950cea-b6ae-4088-9b43-cf3744b0a33d)
 
