@@ -1,3 +1,10 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/AvZhq04o)
-[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-718a45dd9cf7e7f842a935f5ebbe5719a5e09af4491e668f4dbf3b35d5cca122.svg)](https://classroom.github.com/online_ide?assignment_repo_id=12688807&assignment_repo_type=AssignmentRepo)
-OPCION
+MULTIPLICACIÓN POR ALGORITMO DE BOOTH
+
+Video de la demostración: https://youtu.be/R0FzU-s2TFQ
+
+Funcionamiento del sistema completo
+La funcionalidad general de este sistema es recibir dos operandos, y realiza la operación de multiplicación hasta que se suelte el botón que acciona el sistema, luego guarda el resultado en un registro de salida para mantener el resultado estable donde se puede visualizar cuando se termine la operación. 
+Funcionamiento del subsistema de lectura
+El sistema se encarga de recibir los datos del usuario e ingresarlos al sistema, está compuesto por un sincronizador para cada operando y un convertidor de nivel a pulso para el botón de entrada. 
+El sincronizador es de 3 flip-flops para cada bit del operando y sirve para reducir el riesgo de metaestabilidad al proporcionar un mayor margen de tiempo para que el sistema se estabilice antes de comenzar con la multiplicación. 
+Por otra parte, el convertidor de nivel a pulso envía una señal de valid al subsistema de multiplicación cuando el botón se suelta después de ser presionado para que el sistema empiece con la operación. Este convertidor se implementó con una maquina de estados que se detalla más adelante.
