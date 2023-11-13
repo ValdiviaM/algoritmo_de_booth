@@ -12,7 +12,7 @@ El sistema se encarga de recibir los datos del usuario e ingresarlos al sistema,
 El sincronizador es de 3 flip-flops para cada bit del operando y sirve para reducir el riesgo de metaestabilidad al proporcionar un mayor margen de tiempo para que el sistema se estabilice antes de comenzar con la multiplicación. 
 Por otra parte, el convertidor de nivel a pulso envía una señal de valid al subsistema de multiplicación cuando el botón se suelta después de ser presionado para que el sistema empiece con la operación. Este convertidor se implementó con una maquina de estados que se detalla más adelante.
 
-![ss_entrada](https://github.com/dl-2-23/tarea3-griii5/assets/143150841/22f5f56f-d5d4-46b5-897e-b9678bd140c6)
+![ss_entrada](https://github.com/dl-2-23/tarea3-griii5/assets/143150841/0dfb0bc4-d674-456d-ade0-7e1299fa8d11)
 
 ## Funcionamiento del subsistema de multiplicación
 El subsistema de multiplicación se encarga de recibir los datos del sistema de lectura y hacer la multiplicación entre los operandos para luego pasarle el resultado al subsistema de despliegue de resultados y decirle cuando se terminó la operación.
